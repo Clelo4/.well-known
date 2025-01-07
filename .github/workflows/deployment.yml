@@ -1,0 +1,26 @@
+name: Build and Deployment
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "master" ]
+
+env:
+  DEPLOY_ENV: production
+  NODE_ENV: production
+  CI: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          # Cloudflare API Token
+          apiToken: ${{ secrets.CF_PAGE_API }}
+          # Cloudflare Account ID
+          accountId: ${{ vars.CF_ACCOUNT_ID }}
+          command: pages deploy --project-name=${{ vars.CF_PROJECT_NAME }}
