@@ -5,7 +5,7 @@ on:
     inputs:
       environment:
         description: 'Choose an environment to deploy'
-        required: true
+        required: false
         type: choice
         default: 'prod'
         options:
@@ -33,4 +33,4 @@ jobs:
           apiToken: ${{ secrets.CF_PAGE_API }}
           # Cloudflare Account ID
           accountId: ${{ vars.CF_ACCOUNT_ID }}
-          command: pages deploy src  --project-name=${{ vars.CF_PROJECT_NAME }} --env ${{ inputs.environment }}
+          command: pages deploy src  --project-name=${{ vars.CF_PROJECT_NAME }} --env=${{ inputs.environment }}
