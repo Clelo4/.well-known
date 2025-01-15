@@ -26,10 +26,10 @@
   </head>
   <body>
     <h1>Passkey 演示</h1>
-    <h2>
+    <!-- <h2>
       当前域名：
       <span id="current-domain"></span>
-    </h2>
+    </h2> -->
     <button id="create-passkey">创建 Passkey</button>
     <button id="verify-passkey">验证 Passkey</button>
     <div id="output"></div>
@@ -39,9 +39,9 @@
       const createBtn = document.getElementById("create-passkey");
       const verifyBtn = document.getElementById("verify-passkey");
       const outputDiv = document.getElementById("output");
-      const currentDomain = document.getElementById("current-domain");
+      // const currentDomain = document.getElementById("current-domain");
       const currentHost = window.location.hostname;
-      currentDomain.textContent = currentHost;
+      // currentDomain.textContent = currentHost;
       const userId = "test";
 
       // 创建 Passkey
