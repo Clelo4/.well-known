@@ -3,3 +3,9 @@
 
 /apple-app-site-association
   Content-Type: application/json
+
+/
+  Permissions-Policy: publickey-credentials-get=*;
+
+/index.html
+  Permissions-Policy: publickey-credentials-get=*;
